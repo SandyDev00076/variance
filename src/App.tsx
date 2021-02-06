@@ -1,14 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
+import React from 'react';
 import './styles/globals.scss';
-import './App.css';
 import ZoneList from './components/ZoneList';
+
+import styles from './App.module.scss';
+import Header from './components/Header';
 
 interface AppProps {}
 
 function App({}: AppProps) {
   return (
-    <div className="App">
+    <div className={styles.App}>
+      <Header />
       <ZoneList />
     </div>
   );
