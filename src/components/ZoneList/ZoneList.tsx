@@ -2,14 +2,8 @@ import React from 'react';
 
 import styles from './ZoneList.module.scss';
 
-console.log(styles);
-
 const ZoneList = () => {
-  return (
-    <section>
-      <h1>ZoneList</h1>
-    </section>
-  );
+  return <section className={styles.container}>ZoneList</section>;
 };
 
 export default ZoneList;
