@@ -1,21 +1,10 @@
 .container {
-  display: flex;
-  align-items: center;
-}
-
-.appLine {
-  display: flex;
-  align-items: center;
+  padding: 16px;
+  width: 100%;
 }
 
 .appName {
   margin: 0;
-  color: var(--text-secondary);
-  text-transform: uppercase;
+  color: var(--text);
   font-size: 24px;
-}
-
-.timeZoneIcon {
-  margin-right: 10px;
-  fill: var(--text-secondary);
 }
