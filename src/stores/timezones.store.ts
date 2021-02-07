@@ -10,6 +10,10 @@ class TimeZones {
   setTimezones(timezones: string[]) {
     this.timezones = timezones;
   }
+
+  addTimezone(timezone: string) {
+    this.timezones = [...this.timezones, timezone];
+  }
 }
 
 const timezoneStore = new TimeZones();

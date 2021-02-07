@@ -6,10 +6,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--bg-tint);
+  background-color: var(--bg);
+  width: 100%;
 }
 
 .addAZone {
   font-weight: bold;
-  color: var(--text-secondary);
+  color: var(--text-light);
 }

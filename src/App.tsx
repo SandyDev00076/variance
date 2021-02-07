@@ -1,6 +1,7 @@
 import React from 'react';
 import './styles/globals.scss';
 import ZoneList from './components/ZoneList';
+import TZSelector from './components/TZSelector';
 
 import styles from './App.module.scss';
 import Header from './components/Header';
@@ -12,6 +13,7 @@ function App({}: AppProps) {
     <div className={styles.App}>
       <Header />
       <ZoneList />
+      <TZSelector />
     </div>
   );
 }

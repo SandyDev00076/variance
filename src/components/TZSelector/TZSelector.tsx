@@ -7,6 +7,7 @@ import {
   ComboboxPopover,
 } from '@reach/combobox';
 import useTZSearch from '../../hooks/useTZSearch';
+import { timezoneStore } from '../../stores/timezones.store';
 
 import '@reach/combobox/styles.css';
 import styles from './TZSelector.module.scss';
@@ -16,12 +17,16 @@ const TZSelector = () => {
 
   const results = useTZSearch(inp);
 
+  function addTimezone(val: string) {
+    timezoneStore.addTimezone(val);
+  }
+
   return (
     <section className={styles.container}>
       <div className={styles.addAZone}>Add a Zone</div>
-      <Combobox aria-label="Choose a zone">
+      <Combobox aria-label="Choose a zone" onSelect={addTimezone}>
         <ComboboxInput
-          placeholder="Type here"
+          placeholder="Search here"
           value={inp}
           onChange={(e) => setInp(e.target.value)}
         />
