@@ -1,10 +1,23 @@
 .container {
-  padding: 16px;
   width: 100%;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .appName {
   margin: 0;
   color: var(--text);
   font-size: 24px;
+}
+
+.currTZ {
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--text-light);
+  color: var(--text-light);
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
 }

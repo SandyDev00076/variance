@@ -1,15 +1,13 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import dayjs from 'dayjs';
 import timezone from 'dayjs/plugin/timezone';
+
+import styles from './ZoneList.module.scss';
 
 dayjs.extend(timezone);
 
 const ZoneList = () => {
-  useEffect(() => {
-    console.log(dayjs.tz.guess());
-    console.log(new Date().getTimezoneOffset());
-  }, []);
-  return <section></section>;
+  return <section className={styles.container}>ZoneList</section>;
 };
 
 export default ZoneList;
