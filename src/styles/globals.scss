@@ -10,10 +10,40 @@
   --bg: #212121;
   --bg-tint: #2c2c2c;
   --text: #ffffff;
+  --text-invert: #131313;
   --text-secondary: #dbdbdb;
   --text-light: #a3a3a3;
   --neon-purple: #9d00ff;
   --neon-green: #00ff00;
   --neon-blue: #00ffff;
   --neon-pink: #ff00ff;
+}
+
+[data-reach-combobox] {
+  width: max-content;
+}
+
+[data-reach-combobox-input] {
+  background: inherit;
+  border: none;
+  border: 1px solid var(--text-light);
+  font-family: inherit;
+  padding: 5px 10px;
+  border-radius: 10px;
+  color: var(--text);
+  &:focus {
+    outline: none;
+    border-color: var(--text);
+  }
+}
+
+[data-reach-combobox-popover] {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+[data-reach-combobox-list] {
+  max-height: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }

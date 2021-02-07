@@ -6,7 +6,6 @@ import {
   ComboboxOption,
   ComboboxPopover,
 } from '@reach/combobox';
-import TZList from '../../utils/timeZones';
 import useTZSearch from '../../hooks/useTZSearch';
 
 import '@reach/combobox/styles.css';
@@ -18,18 +17,25 @@ const TZSelector = () => {
   const results = useTZSearch(inp);
 
   return (
-    <Combobox aria-label="Choose a zone">
-      <ComboboxInput value={inp} onChange={(e) => setInp(e.target.value)} />
-      {results && (
-        <ComboboxPopover>
-          <ComboboxList>
-            {results.map((tz) => (
-              <ComboboxOption key={tz} value={tz} />
-            ))}
-          </ComboboxList>
-        </ComboboxPopover>
-      )}
-    </Combobox>
+    <section className={styles.container}>
+      <div className={styles.addAZone}>Add a Zone</div>
+      <Combobox aria-label="Choose a zone">
+        <ComboboxInput
+          placeholder="Type here"
+          value={inp}
+          onChange={(e) => setInp(e.target.value)}
+        />
+        {results && (
+          <ComboboxPopover>
+            <ComboboxList>
+              {results.map((tz) => (
+                <ComboboxOption key={tz} value={tz} />
+              ))}
+            </ComboboxList>
+          </ComboboxPopover>
+        )}
+      </Combobox>
+    </section>
   );
 };
 

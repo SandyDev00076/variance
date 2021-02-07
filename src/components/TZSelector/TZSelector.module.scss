@@ -1,0 +1,15 @@
+@use '../../styles/shared';
+
+.container {
+  padding: 10px 16px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--bg-tint);
+}
+
+.addAZone {
+  font-weight: bold;
+  color: var(--text-secondary);
+}

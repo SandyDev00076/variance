@@ -1,0 +1,14 @@
+%coloredBorders {
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    bottom: -2px;
+    left: -2px;
+    z-index: -1;
+    border-radius: 10px;
+    background: linear-gradient(236deg, var(--neon-purple), var(--neon-pink));
+  }
+}
