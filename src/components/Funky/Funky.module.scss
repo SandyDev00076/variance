@@ -1,0 +1,23 @@
+.wrapper {
+  position: relative;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+.coloredBorders {
+  position: absolute;
+  z-index: 0;
+  top: -2px;
+  right: -2px;
+  bottom: -2px;
+  left: -2px;
+  background: linear-gradient(
+    58deg,
+    var(--neon-purple),
+    var(--neon-blue),
+    var(--neon-green)
+  );
+}
