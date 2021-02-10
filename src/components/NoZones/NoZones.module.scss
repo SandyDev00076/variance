@@ -1,0 +1,19 @@
+.container {
+  display: grid;
+  place-items: center;
+}
+
+.line1 {
+  color: var(--text-secondary);
+  margin-bottom: 5px;
+}
+
+.line2 {
+  color: var(--text-secondary);
+  font-size: 12px;
+  opacity: 0.4;
+}
+
+.panel {
+  text-align: center;
+}

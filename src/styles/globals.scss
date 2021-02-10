@@ -7,8 +7,8 @@
 }
 
 :root {
-  --bg: #212121;
-  --bg-tint: #2c2c2c;
+  --bg: #2c2c2c;
+  --bg-tint: #212121;
   --text: #ffffff;
   --text-invert: #131313;
   --text-secondary: #dbdbdb;
@@ -17,25 +17,6 @@
   --neon-green: #00ff00;
   --neon-blue: #00ffff;
   --neon-pink: #ff00ff;
-}
-
-[data-reach-combobox] {
-  width: max-content;
-}
-
-[data-reach-combobox-input] {
-  background: inherit;
-  border: none;
-  border: 1px solid var(--text-light);
-  font-family: inherit;
-  padding: 5px 10px;
-  border-radius: 10px;
-  color: var(--text);
-  width: 150px;
-  &:focus {
-    outline: none;
-    border-color: var(--text);
-  }
 }
 
 [data-reach-combobox-popover] {
