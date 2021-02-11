@@ -1,23 +1,24 @@
 import React from 'react';
 import { observer } from 'mobx-react-lite';
-import { timezoneStore } from '../../stores/timezones.store';
 import NoZones from '../NoZones';
 import ZoneCard from '../ZoneCard';
+import { cityStore } from '../../stores/cities.store';
+import type { City } from '../../../types/City';
 
 import styles from './ZoneList.module.scss';
 
 interface Props {
-  zones: string[];
+  cities: City[];
 }
-const ZoneList = ({ zones }: Props) => {
+const ZoneList = ({ cities }: Props) => {
   return (
     <section className={styles.container}>
-      {zones.length === 0 ? (
+      {cities.length === 0 ? (
         <NoZones />
       ) : (
-        <div className={styles.zones}>
-          {zones.map((zone) => (
-            <ZoneCard zone={zone} key={zone} />
+        <div className={styles.cities}>
+          {cities.map((city) => (
+            <ZoneCard city={city} key={city.id} />
           ))}
         </div>
       )}
@@ -26,7 +27,7 @@ const ZoneList = ({ zones }: Props) => {
 };
 
 const ConnectedZoneList = observer(() => (
-  <ZoneList zones={timezoneStore.timezones} />
+  <ZoneList cities={cityStore.cities} />
 ));
 
 export default ConnectedZoneList;

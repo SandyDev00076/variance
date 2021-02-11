@@ -8,6 +8,9 @@ import {
 } from '@reach/combobox';
 import useTZSearch from '../../hooks/useTZSearch';
 import { timezoneStore } from '../../stores/timezones.store';
+import { cityStore } from '../../stores/cities.store';
+import uid from 'uniqid';
+import type { City } from '../../../types/City';
 
 import '@reach/combobox/styles.css';
 import styles from './TZSelector.module.scss';
@@ -17,8 +20,17 @@ const TZSelector = () => {
 
   const results = useTZSearch(inp);
 
-  function addTimezone(val: string) {
-    timezoneStore.addTimezone(val);
+  function addTimezone(cityObj: string) {
+    const cityToAdd = JSON.parse(cityObj) as {
+      city: string;
+      timezone: string;
+    };
+    cityStore.addCity({
+      id: uid('variance-'),
+      city: cityToAdd.city,
+      timezone: cityToAdd.timezone,
+    });
+    setInp('');
   }
 
   return (
@@ -34,7 +46,7 @@ const TZSelector = () => {
           <ComboboxPopover>
             <ComboboxList>
               {results.map((tz, index) => (
-                <ComboboxOption key={index} value={tz.timezone}>
+                <ComboboxOption key={index} value={JSON.stringify(tz)}>
                   <div className={styles.option}>
                     <div className={styles.city}>{tz.city}</div>
                     <div className={styles.timezone}>{tz.timezone}</div>
