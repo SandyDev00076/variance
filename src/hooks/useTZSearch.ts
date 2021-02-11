@@ -1,10 +1,10 @@
 import React from 'react';
-import TZList from '../utils/timeZones';
+import cTimezones from 'city-timezones';
 
 const useTZSearch = (searchQuery: string) => {
-  return TZList.filter((tz) =>
-    tz.toLowerCase().includes(searchQuery.toLowerCase()),
-  );
+  if (searchQuery.length < 3) return [];
+  const results = cTimezones.lookupViaCity(searchQuery);
+  return results.map((place) => place.city);
 };
 
 export default useTZSearch;

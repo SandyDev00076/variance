@@ -23,7 +23,7 @@ const TZSelector = () => {
 
   return (
     <section className={styles.container}>
-      <div className={styles.addAZone}>Add a Zone</div>
+      <div className={styles.addAZone}>Add a City</div>
       <Combobox aria-label="Choose a zone" onSelect={addTimezone}>
         <ComboboxInput
           placeholder="Search here"

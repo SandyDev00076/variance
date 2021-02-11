@@ -1,13 +1,10 @@
 import React from 'react';
-import dayjs from 'dayjs';
-import timezone from 'dayjs/plugin/timezone';
+import { getLocalTimezone } from '../../utils';
 
 import styles from './Header.module.scss';
 
-dayjs.extend(timezone);
-
 const Header = () => {
-  const currentTimezone = dayjs.tz.guess();
+  const currentTimezone = getLocalTimezone();
 
   return (
     <header className={styles.container}>

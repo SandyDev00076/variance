@@ -1,14 +1,10 @@
 import React from 'react';
-import dayjs from 'dayjs';
-import timezone from 'dayjs/plugin/timezone';
 import { observer } from 'mobx-react-lite';
 import { timezoneStore } from '../../stores/timezones.store';
 import NoZones from '../NoZones';
-
-import styles from './ZoneList.module.scss';
 import ZoneCard from '../ZoneCard';
 
-dayjs.extend(timezone);
+import styles from './ZoneList.module.scss';
 
 interface Props {
   zones: string[];
