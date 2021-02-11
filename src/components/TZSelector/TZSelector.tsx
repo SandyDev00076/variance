@@ -33,8 +33,13 @@ const TZSelector = () => {
         {results && (
           <ComboboxPopover>
             <ComboboxList>
-              {results.map((tz) => (
-                <ComboboxOption key={tz} value={tz} />
+              {results.map((tz, index) => (
+                <ComboboxOption key={index} value={tz.timezone}>
+                  <div className={styles.option}>
+                    <div className={styles.city}>{tz.city}</div>
+                    <div className={styles.timezone}>{tz.timezone}</div>
+                  </div>
+                </ComboboxOption>
               ))}
             </ComboboxList>
           </ComboboxPopover>
