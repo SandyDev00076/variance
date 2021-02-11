@@ -3,5 +3,5 @@ export function getTimeFromZone(zone: string) {
 }
 
 export function getLocalTimezone() {
-  return 'Asia/Calcutta';
+  return Intl.DateTimeFormat().resolvedOptions().timeZone;
 }
