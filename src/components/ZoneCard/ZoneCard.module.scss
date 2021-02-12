@@ -3,11 +3,22 @@
   padding: 10px 16px;
 }
 
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
 .cityName {
   font-weight: bold;
   color: var(--text);
   font-size: 16px;
-  margin-bottom: 5px;
+}
+
+.timezone {
+  font-size: 14px;
+  color: var(--text-light);
 }
 
 .time {

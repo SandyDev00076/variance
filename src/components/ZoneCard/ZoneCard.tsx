@@ -19,7 +19,10 @@ const ZoneCard = ({ city, timeLapsed }: Props) => {
   return (
     <Funky>
       <section className={styles.container}>
-        <div className={styles.cityName}>{city.city}</div>
+        <div className={styles.header}>
+          <div className={styles.cityName}>{city.city}</div>
+          <div className={styles.timezone}>{city.timezone}</div>
+        </div>
         <div className={styles.time}>{timeString}</div>
       </section>
     </Funky>
