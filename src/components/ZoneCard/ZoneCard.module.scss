@@ -26,3 +26,31 @@
   font-weight: bold;
   color: var(--text);
 }
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 20px;
+}
+
+.day {
+  background-color: var(--text-secondary);
+  & > svg {
+    fill: var(--bg-tint);
+  }
+}
+
+.night {
+  background-color: var(--bg-dark);
+  & > svg {
+    fill: var(--text);
+  }
+}

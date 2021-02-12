@@ -12,3 +12,8 @@ export function getTimeFromZone(zone: string) {
 export function getLocalTimezone() {
   return Intl.DateTimeFormat().resolvedOptions().timeZone;
 }
+
+export function whetherDay(time: string) {
+  const hours = parseInt(time.split(':')[0]);
+  return hours >= 6 && hours < 18;
+}

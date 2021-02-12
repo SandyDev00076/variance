@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import type { City } from '../../../types/City';
-import { getTimeFromZone } from '../../utils';
+import { getTimeFromZone, whetherDay } from '../../utils';
 import Funky from '../Funky';
+import NightIcon from '../../assets/icons/nightlight-24px.svg';
+import DayIcon from '../../assets/icons/wb_sunny-24px.svg';
 
 import styles from './ZoneCard.module.scss';
+import clsx from 'clsx';
 
 interface Props {
   city: City;
@@ -16,6 +19,10 @@ const ZoneCard = ({ city, timeLapsed }: Props) => {
     setTimeString(getTimeFromZone(city.timezone));
   }, [timeLapsed]);
 
+  const isDay = useMemo(() => {
+    return whetherDay(timeString);
+  }, [timeString]);
+
   return (
     <Funky>
       <section className={styles.container}>
@@ -23,7 +30,17 @@ const ZoneCard = ({ city, timeLapsed }: Props) => {
           <div className={styles.cityName}>{city.city}</div>
           <div className={styles.timezone}>{city.timezone}</div>
         </div>
-        <div className={styles.time}>{timeString}</div>
+        <div className={styles.content}>
+          <div className={styles.time}>{timeString}</div>
+          <div
+            className={clsx(styles.icon, {
+              [styles.day]: isDay,
+              [styles.night]: !isDay,
+            })}
+          >
+            {isDay ? <DayIcon /> : <NightIcon />}
+          </div>
+        </div>
       </section>
     </Funky>
   );
