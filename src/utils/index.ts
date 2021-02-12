@@ -1,5 +1,12 @@
 export function getTimeFromZone(zone: string) {
-  return '10:30:20';
+  const currDate = new Date().toLocaleString('en-US', {
+    timeZone: zone,
+  });
+  const newDate = new Date(currDate);
+  const hours = `${newDate.getHours()}`.padStart(2, '0');
+  const mins = `${newDate.getMinutes()}`.padStart(2, '0');
+  const secs = `${newDate.getSeconds()}`.padStart(2, '0');
+  return `${hours}:${mins}:${secs}`;
 }
 
 export function getLocalTimezone() {

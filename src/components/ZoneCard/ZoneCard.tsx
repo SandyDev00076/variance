@@ -7,23 +7,20 @@ import styles from './ZoneCard.module.scss';
 
 interface Props {
   city: City;
+  timeLapsed: number;
 }
-const ZoneCard = ({ city }: Props) => {
+const ZoneCard = ({ city, timeLapsed }: Props) => {
   const [timeString, setTimeString] = useState(getTimeFromZone(city.timezone));
 
   useEffect(() => {
-    const interval = setInterval(
-      () => setTimeString(getTimeFromZone(city.timezone)),
-      1000,
-    );
-
-    return () => clearInterval(interval);
-  }, []);
+    setTimeString(getTimeFromZone(city.timezone));
+  }, [timeLapsed]);
 
   return (
     <Funky>
       <section className={styles.container}>
         <div className={styles.cityName}>{city.city}</div>
+        <div className={styles.time}>{timeString}</div>
       </section>
     </Funky>
   );

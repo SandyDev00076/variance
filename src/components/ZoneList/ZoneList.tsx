@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { observer } from 'mobx-react-lite';
 import NoZones from '../NoZones';
 import ZoneCard from '../ZoneCard';
@@ -11,6 +11,13 @@ interface Props {
   cities: City[];
 }
 const ZoneList = ({ cities }: Props) => {
+  const [time, setTime] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => setTime((prev) => prev + 1), 1000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className={styles.container}>
       {cities.length === 0 ? (
@@ -18,7 +25,7 @@ const ZoneList = ({ cities }: Props) => {
       ) : (
         <div className={styles.cities}>
           {cities.map((city) => (
-            <ZoneCard city={city} key={city.id} />
+            <ZoneCard city={city} key={city.id} timeLapsed={time} />
           ))}
         </div>
       )}
