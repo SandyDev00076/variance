@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@reach/combobox": "^0.13.0",
+    "@reach/tooltip": "^0.13.0",
     "city-timezones": "^1.2.0",
     "clsx": "^1.1.1",
     "mobx": "^6.1.5",
