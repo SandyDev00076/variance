@@ -4,9 +4,11 @@ import { getTimeFromZone, whetherDay } from '../../utils';
 import Funky from '../Funky';
 import NightIcon from '../../assets/icons/nightlight-24px.svg';
 import DayIcon from '../../assets/icons/wb_sunny-24px.svg';
+import clsx from 'clsx';
+import Tooltip from '@reach/tooltip';
+import '@reach/tooltip/styles.css';
 
 import styles from './ZoneCard.module.scss';
-import clsx from 'clsx';
 
 interface Props {
   city: City;
@@ -32,14 +34,16 @@ const ZoneCard = ({ city, timeLapsed }: Props) => {
         </div>
         <div className={styles.content}>
           <div className={styles.time}>{timeString}</div>
-          <div
-            className={clsx(styles.icon, {
-              [styles.day]: isDay,
-              [styles.night]: !isDay,
-            })}
-          >
-            {isDay ? <DayIcon /> : <NightIcon />}
-          </div>
+          <Tooltip label={isDay ? 'Day' : 'Night'}>
+            <div
+              className={clsx(styles.icon, {
+                [styles.day]: isDay,
+                [styles.night]: !isDay,
+              })}
+            >
+              {isDay ? <DayIcon /> : <NightIcon />}
+            </div>
+          </Tooltip>
         </div>
       </section>
     </Funky>
