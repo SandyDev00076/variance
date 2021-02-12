@@ -13,7 +13,7 @@ function App({}: AppProps) {
   return (
     <div className={styles.App}>
       <Header />
-      <Converter />
+      <Converter onValidTimeInput={(k) => console.log(k)} />
       <ZoneList />
       <TZSelector />
     </div>

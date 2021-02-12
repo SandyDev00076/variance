@@ -17,3 +17,9 @@ export function whetherDay(time: string) {
   const hours = parseInt(time.split(':')[0]);
   return hours >= 6 && hours < 18;
 }
+
+export function isValidTimeString(timeString: string) {
+  return /^(((([0-1][0-9])|(2[0-3])):?[0-5][0-9]:?[0-5][0-9]+$))/.test(
+    timeString,
+  );
+}

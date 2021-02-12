@@ -7,7 +7,6 @@ import {
   ComboboxPopover,
 } from '@reach/combobox';
 import useTZSearch from '../../hooks/useTZSearch';
-import { timezoneStore } from '../../stores/timezones.store';
 import { cityStore } from '../../stores/cities.store';
 import { nanoid } from 'nanoid';
 
