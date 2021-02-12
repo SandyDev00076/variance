@@ -9,8 +9,7 @@ import {
 import useTZSearch from '../../hooks/useTZSearch';
 import { timezoneStore } from '../../stores/timezones.store';
 import { cityStore } from '../../stores/cities.store';
-import uid from 'uniqid';
-import type { City } from '../../../types/City';
+import { nanoid } from 'nanoid';
 
 import '@reach/combobox/styles.css';
 import styles from './TZSelector.module.scss';
@@ -26,7 +25,7 @@ const TZSelector = () => {
       timezone: string;
     };
     cityStore.addCity({
-      id: uid('variance-'),
+      id: `variance-${nanoid(5)}`,
       city: cityToAdd.city,
       timezone: cityToAdd.timezone,
     });

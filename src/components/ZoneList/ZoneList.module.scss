@@ -5,6 +5,8 @@
   border-radius: 10px;
   flex: 1;
   margin-bottom: 16px;
+  max-height: calc(100vh - 228px);
+  overflow-y: auto;
 }
 
 .cities {

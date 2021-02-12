@@ -12,3 +12,25 @@
     background: linear-gradient(236deg, var(--neon-purple), var(--neon-pink));
   }
 }
+
+%card {
+  padding: 10px 16px;
+  border-radius: 10px;
+  background-color: var(--bg);
+  width: 100%;
+}
+
+%inp {
+  background: var(--bg-tint);
+  border: none;
+  font-family: inherit;
+  padding: 10px;
+  border-radius: 10px;
+  color: var(--text);
+  text-align: center;
+  width: 150px;
+  &:focus {
+    outline: none;
+    border-color: var(--text);
+  }
+}
