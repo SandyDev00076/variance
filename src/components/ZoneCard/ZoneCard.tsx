@@ -13,8 +13,9 @@ import styles from './ZoneCard.module.scss';
 interface Props {
   city: City;
   timeLapsed: number;
+  timeInput: string | null;
 }
-const ZoneCard = ({ city, timeLapsed }: Props) => {
+const ZoneCard = ({ city, timeLapsed, timeInput }: Props) => {
   const [timeString, setTimeString] = useState(getTimeFromZone(city.timezone));
 
   useEffect(() => {
@@ -22,8 +23,14 @@ const ZoneCard = ({ city, timeLapsed }: Props) => {
   }, [timeLapsed]);
 
   const isDay = useMemo(() => {
+    if (timeInput !== null) return whetherDay(timeInput);
     return whetherDay(timeString);
-  }, [timeString]);
+  }, [timeString, timeInput]);
+
+  const timeToShow = useMemo(() => {
+    if (timeInput !== null) return getTimeFromZone(city.timezone, timeInput);
+    return timeString;
+  }, [timeInput, timeString]);
 
   return (
     <Funky>
@@ -33,7 +40,7 @@ const ZoneCard = ({ city, timeLapsed }: Props) => {
           <div className={styles.timezone}>{city.timezone}</div>
         </div>
         <div className={styles.content}>
-          <div className={styles.time}>{timeString}</div>
+          <div className={styles.time}>{timeToShow}</div>
           <Tooltip label={isDay ? 'Day' : 'Night'}>
             <div
               className={clsx(styles.icon, {

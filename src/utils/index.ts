@@ -1,8 +1,10 @@
-export function getTimeFromZone(zone: string) {
-  const currDate = new Date().toLocaleString('en-US', {
+export function getTimeFromZone(zone: string, timeToConvert?: string) {
+  const currDate =
+    timeToConvert === undefined ? new Date() : new Date(timeToConvert);
+  const currDateString = currDate.toLocaleString('en-US', {
     timeZone: zone,
   });
-  const newDate = new Date(currDate);
+  const newDate = new Date(currDateString);
   const hours = `${newDate.getHours()}`.padStart(2, '0');
   const mins = `${newDate.getMinutes()}`.padStart(2, '0');
   const secs = `${newDate.getSeconds()}`.padStart(2, '0');

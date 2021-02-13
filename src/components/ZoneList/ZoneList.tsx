@@ -9,8 +9,9 @@ import styles from './ZoneList.module.scss';
 
 interface Props {
   cities: City[];
+  timeInput: string | null;
 }
-const ZoneList = ({ cities }: Props) => {
+const ZoneList = ({ cities, timeInput }: Props) => {
   const [time, setTime] = useState(0);
 
   useEffect(() => {
@@ -25,7 +26,12 @@ const ZoneList = ({ cities }: Props) => {
       ) : (
         <div className={styles.cities}>
           {cities.map((city) => (
-            <ZoneCard city={city} key={city.id} timeLapsed={time} />
+            <ZoneCard
+              city={city}
+              key={city.id}
+              timeLapsed={time}
+              timeInput={timeInput}
+            />
           ))}
         </div>
       )}
@@ -33,8 +39,11 @@ const ZoneList = ({ cities }: Props) => {
   );
 };
 
-const ConnectedZoneList = observer(() => (
-  <ZoneList cities={cityStore.cities} />
+interface ConnectedProps {
+  timeInput: string | null;
+}
+const ConnectedZoneList = observer(({ timeInput }: ConnectedProps) => (
+  <ZoneList cities={cityStore.cities} timeInput={timeInput} />
 ));
 
 export default ConnectedZoneList;

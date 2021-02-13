@@ -6,13 +6,14 @@ import { isValidTimeString } from '../../utils';
 import styles from './Converter.module.scss';
 
 interface Props {
-  onValidTimeInput: (k: string) => void;
+  onValidTimeInput: (k: string | null) => void;
 }
 const Converter = ({ onValidTimeInput }: Props) => {
   const [str, setStr] = useState('');
 
   useEffect(() => {
     if (isValidTimeString(str)) onValidTimeInput(str);
+    else onValidTimeInput(null);
   }, [str]);
 
   return (

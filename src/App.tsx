@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './styles/globals.scss';
 import ZoneList from './components/ZoneList';
 import TZSelector from './components/TZSelector';
@@ -10,11 +10,13 @@ import styles from './App.module.scss';
 interface AppProps {}
 
 function App({}: AppProps) {
+  const [timeInput, setTimeInput] = useState<string | null>(null);
+
   return (
     <div className={styles.App}>
       <Header />
-      <Converter onValidTimeInput={(k) => console.log(k)} />
-      <ZoneList />
+      <Converter onValidTimeInput={(k) => setTimeInput(k)} />
+      <ZoneList timeInput={timeInput} />
       <TZSelector />
     </div>
   );
