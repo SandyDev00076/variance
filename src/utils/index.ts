@@ -1,6 +1,9 @@
 export function getTimeFromZone(zone: string, timeToConvert?: string) {
-  const currDate =
-    timeToConvert === undefined ? new Date() : new Date(timeToConvert);
+  const currDate = new Date();
+  if (timeToConvert !== undefined) {
+    const parts = timeToConvert.split(':').map((part) => parseInt(part));
+    currDate.setHours(parts[0], parts[1], parts[2]);
+  }
   const currDateString = currDate.toLocaleString('en-US', {
     timeZone: zone,
   });
