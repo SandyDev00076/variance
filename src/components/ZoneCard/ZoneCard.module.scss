@@ -71,6 +71,10 @@
     place-items: center;
     cursor: pointer;
 
+    &:focus {
+      outline: none;
+    }
+
     svg {
       fill: var(--text);
     }

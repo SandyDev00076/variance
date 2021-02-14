@@ -27,11 +27,23 @@ class CityStore {
   shiftLeft(id: string) {
     const cityToShift = this.cities.findIndex((city) => city.id === id);
     if (cityToShift <= 0) return;
+    const toBeSwapped1 = cityToShift;
+    const toBeSwapped2 = cityToShift - 1;
+    const temp = [...this.cities];
+    temp[toBeSwapped1] = this.cities[toBeSwapped2];
+    temp[toBeSwapped2] = this.cities[toBeSwapped1];
+    this.cities = temp;
   }
 
   shiftRight(id: string) {
     const cityToShift = this.cities.findIndex((city) => city.id === id);
     if (cityToShift < 0 || cityToShift === this.cities.length - 1) return;
+    const toBeSwapped1 = cityToShift;
+    const toBeSwapped2 = cityToShift + 1;
+    const temp = [...this.cities];
+    temp[toBeSwapped1] = this.cities[toBeSwapped2];
+    temp[toBeSwapped2] = this.cities[toBeSwapped1];
+    this.cities = temp;
   }
 }
 

@@ -57,10 +57,10 @@ const ZoneCard = ({ city, timeLapsed, timeInput }: Props) => {
           </Tooltip>
         </div>
         <div className={styles.actions}>
-          <button>
+          <button onClick={() => cityStore.shiftLeft(city.id)}>
             <LeftIcon />
           </button>
-          <button>
+          <button onClick={() => cityStore.shiftRight(city.id)}>
             <RightIcon />
           </button>
           <button onClick={() => cityStore.removeCity(city.id)}>
