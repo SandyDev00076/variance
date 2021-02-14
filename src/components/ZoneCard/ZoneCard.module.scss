@@ -31,6 +31,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 10px;
 }
 
 .icon {
@@ -52,5 +53,42 @@
   background-color: var(--bg-dark);
   & > svg {
     fill: var(--text);
+  }
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+
+  button {
+    border-radius: 5px;
+    border: none;
+    background-color: var(--bg);
+    color: var(--text);
+    display: grid;
+    padding: 2px 0;
+    place-items: center;
+    cursor: pointer;
+
+    svg {
+      fill: var(--text);
+    }
+  }
+}
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: 1224px) {
+  /* Styles */
+  .actions {
+    grid-template-columns: repeat(3, 60px);
+    justify-content: flex-end;
+
+    button {
+      filter: brightness(0.9);
+      &:hover {
+        filter: brightness(1);
+      }
+    }
   }
 }

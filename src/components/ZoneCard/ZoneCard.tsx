@@ -3,6 +3,9 @@ import type { City } from '../../../types/City';
 import { getTimeFromZone, whetherDay } from '../../utils';
 import Funky from '../Funky';
 import NightIcon from '../../assets/icons/nightlight-24px.svg';
+import LeftIcon from '../../assets/icons/chevron_left-24px.svg';
+import RightIcon from '../../assets/icons/chevron_right-24px.svg';
+import DeleteIcon from '../../assets/icons/delete-20px.svg';
 import DayIcon from '../../assets/icons/wb_sunny-24px.svg';
 import clsx from 'clsx';
 import Tooltip from '@reach/tooltip';
@@ -51,6 +54,17 @@ const ZoneCard = ({ city, timeLapsed, timeInput }: Props) => {
               {isDay ? <DayIcon /> : <NightIcon />}
             </div>
           </Tooltip>
+        </div>
+        <div className={styles.actions}>
+          <button>
+            <LeftIcon />
+          </button>
+          <button>
+            <RightIcon />
+          </button>
+          <button>
+            <DeleteIcon />
+          </button>
         </div>
       </section>
     </Funky>
