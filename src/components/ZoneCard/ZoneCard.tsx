@@ -10,6 +10,7 @@ import DayIcon from '../../assets/icons/wb_sunny-24px.svg';
 import clsx from 'clsx';
 import Tooltip from '@reach/tooltip';
 import '@reach/tooltip/styles.css';
+import { cityStore } from '../../stores/cities.store';
 
 import styles from './ZoneCard.module.scss';
 
@@ -62,7 +63,7 @@ const ZoneCard = ({ city, timeLapsed, timeInput }: Props) => {
           <button>
             <RightIcon />
           </button>
-          <button>
+          <button onClick={() => cityStore.removeCity(city.id)}>
             <DeleteIcon />
           </button>
         </div>
