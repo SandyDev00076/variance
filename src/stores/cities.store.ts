@@ -23,6 +23,16 @@ class CityStore {
   findCity(id: string) {
     return this.cities.find((city) => city.id === id);
   }
+
+  shiftLeft(id: string) {
+    const cityToShift = this.cities.findIndex((city) => city.id === id);
+    if (cityToShift <= 0) return;
+  }
+
+  shiftRight(id: string) {
+    const cityToShift = this.cities.findIndex((city) => city.id === id);
+    if (cityToShift < 0 || cityToShift === this.cities.length - 1) return;
+  }
 }
 
 const cityStore = new CityStore();
