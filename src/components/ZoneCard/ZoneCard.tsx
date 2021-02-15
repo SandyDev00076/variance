@@ -26,15 +26,14 @@ const ZoneCard = ({ city, timeLapsed, timeInput }: Props) => {
     setTimeString(getTimeFromZone(city.timezone));
   }, [timeLapsed]);
 
-  const isDay = useMemo(() => {
-    if (timeInput !== null) return whetherDay(timeInput);
-    return whetherDay(timeString);
-  }, [timeString, timeInput]);
-
   const timeToShow = useMemo(() => {
     if (timeInput !== null) return getTimeFromZone(city.timezone, timeInput);
     return timeString;
   }, [timeInput, timeString]);
+
+  const isDay = useMemo(() => {
+    return whetherDay(timeToShow);
+  }, [timeToShow]);
 
   return (
     <Funky>

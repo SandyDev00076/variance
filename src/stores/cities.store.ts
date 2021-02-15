@@ -2,7 +2,7 @@ import { makeAutoObservable } from 'mobx';
 import {
   getCitiesFromLocal,
   setCitiesToLocal,
-} from 'src/services/storageService';
+} from '../services/storageService';
 import type { City } from 'types/City';
 
 class CityStore {
