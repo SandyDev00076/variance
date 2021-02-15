@@ -2,6 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import './index.css';
+import lf from 'localforage';
+
+lf.config({
+  name: 'Variance',
+  storeName: 'zones',
+  description: 'Storage for timezones',
+  driver: lf.INDEXEDDB,
+});
 
 ReactDOM.render(
   <React.StrictMode>
