@@ -14,10 +14,40 @@
   right: -2px;
   bottom: -2px;
   left: -2px;
+}
+
+.purpleBlueGreen {
   background: linear-gradient(
     58deg,
     var(--neon-purple),
     var(--neon-blue),
     var(--neon-green)
+  );
+}
+
+.blueBluePink {
+  background: linear-gradient(
+    58deg,
+    var(--neon-blue-dark),
+    var(--neon-blue-darker),
+    var(--neon-pink-light)
+  );
+}
+
+.greenPinkYellow {
+  background: linear-gradient(
+    58deg,
+    var(--neon-green),
+    var(--neon-pink),
+    var(--neon-yellow)
+  );
+}
+
+.greenPinkViolet {
+  background: linear-gradient(
+    58deg,
+    var(--neon-green),
+    var(--neon-pink),
+    var(--neon-violet)
   );
 }

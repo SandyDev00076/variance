@@ -18,8 +18,9 @@ interface Props {
   city: City;
   timeLapsed: number;
   timeInput: string | null;
+  index: number;
 }
-const ZoneCard = ({ city, timeLapsed, timeInput }: Props) => {
+const ZoneCard = ({ city, timeLapsed, timeInput, index }: Props) => {
   const [timeString, setTimeString] = useState(getTimeFromZone(city.timezone));
 
   useEffect(() => {
@@ -36,7 +37,7 @@ const ZoneCard = ({ city, timeLapsed, timeInput }: Props) => {
   }, [timeToShow]);
 
   return (
-    <Funky>
+    <Funky index={index}>
       <section className={styles.container}>
         <div className={styles.header}>
           <div className={styles.cityName}>{city.city}</div>

@@ -25,12 +25,13 @@ const ZoneList = ({ cities, timeInput }: Props) => {
         <NoZones />
       ) : (
         <div className={styles.cities}>
-          {cities.map((city) => (
+          {cities.map((city, index) => (
             <ZoneCard
               city={city}
               key={city.id}
               timeLapsed={time}
               timeInput={timeInput}
+              index={index}
             />
           ))}
         </div>
