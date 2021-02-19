@@ -18,11 +18,14 @@ function App({}: AppProps) {
   }, []);
 
   return (
-    <div className={styles.App}>
-      <Header />
-      <Converter onValidTimeInput={(k) => setTimeInput(k)} />
-      <ZoneList timeInput={timeInput} />
-      <TZSelector />
+    <div className={styles.container}>
+      <div className={styles.App}>
+        <Header />
+        <Converter onValidTimeInput={(k) => setTimeInput(k)} />
+        <ZoneList timeInput={timeInput} />
+        <TZSelector />
+      </div>
+      <div className={styles.bgClip} />
     </div>
   );
 }

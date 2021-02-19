@@ -1,10 +1,23 @@
 .App {
+  position: relative;
   min-height: 100vh;
-  background-color: var(--bg-tint);
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 16px;
+  z-index: 1;
+}
+
+.bgClip {
+  position: fixed;
+  top: 0;
+  left: 0;
+  clip-path: circle(38.5% at 0 0);
+  height: 100vh;
+  width: 100vw;
+  z-index: 0;
+  background-color: var(--bg-clip);
+  transition: all 0.5s;
 }
 
 /* Desktops and laptops ----------- */
@@ -12,5 +25,9 @@
   /* Styles */
   .App {
     padding: 16px 20%;
+  }
+
+  .bgClip {
+    clip-path: ellipse(50% 60% at 0% 0%);
   }
 }
