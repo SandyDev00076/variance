@@ -15,7 +15,12 @@ export function getTimeFromZone(zone: string, timeToConvert?: string) {
 }
 
 export function getLocalTimezone() {
-  return Intl.DateTimeFormat().resolvedOptions().timeZone;
+  try {
+    return Intl.DateTimeFormat().resolvedOptions().timeZone;
+  } catch (e) {
+    console.error(e);
+    return 'Not Found';
+  }
 }
 
 export function whetherDay(time: string) {
