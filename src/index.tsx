@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import './index.css';
-import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import lf from 'localforage';
 
 lf.config({
@@ -24,8 +23,3 @@ ReactDOM.render(
 if (import.meta.hot) {
   import.meta.hot.accept();
 }
-
-/**
- * PWA Support added from CRA
- */
-serviceWorkerRegistration.register();
